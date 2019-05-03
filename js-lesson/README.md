@@ -1,18 +1,31 @@
 # tddlesson-js
 
-# Test framework:
+## Test framework:
 
-We are running our tests using [Jest](https://jestjs.io/docs/en/getting-started), the same test framework we use to test JavaScript in our Bonfire repository.  Jest is both an runner and an assertion library in the same package, making it easy to hit the ground running.
+We are running our tests using [Jest](https://jestjs.io/docs/en/getting-started), the same test framework we use to test JavaScript in our Bonfire repository.
 
-# Installation steps
-
-The first time you use `docker-cmd` will be slower because it will need to download the container.
+## Installation steps
 
 1. Install [Docker for mac](https://docs.docker.com/docker-for-mac/install/)
 1. CD into this directory: `cd js-lesson`
-1. Install node dependencies: `./docker-cmd.sh npm install`
-1. Run the example tests: `./docker-cmd npm run test`
+1. Install node dependencies: `./run-install`
+1. Run the all .spec.js tests in the src directory: `./run-tests`
 
-# Docker Notes
+Note: The first time you use `docker-cmd` will be slower because it will need to download the container.
 
-This depends on the official node docker container.  `docker-cmd` is provided as a helper to execute commands inside the container.  Your current working directory is mounted as a volume inside the docker container each time you use `docker-cmd`.  You can read more about the node.js container at the official [docker-node github repo](https://github.com/nodejs/docker-node/blob/master/README.md#how-to-use-this-image).
+## Directory Structure:
+
+JS files are created in `src/`.  Test files are created in `src/` and end with `spec.js`.
+
+## Executing other commands inside the container
+
+```bash
+# Example: Add another package
+./node-container-cmd npm install -D typescript @types/node
+
+# Example: Execute a js file
+./node-container-cmd node index.js
+
+# Open a bash terminal inside the container
+./node-container-cmd /bin/bash
+```
