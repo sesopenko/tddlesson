@@ -1,0 +1,11 @@
+{
+  "name": "tddlesson-js",
+  "version": "1.0.0",
+  "description": "TDD programming lesson in js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
